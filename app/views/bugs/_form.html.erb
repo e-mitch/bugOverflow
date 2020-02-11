@@ -1,0 +1,47 @@
+<%= form_with model: @bug, local: true do |form| %>
+ 
+  <% if @bug.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@bug.errors.count, "error") %> prohibited
+        this bug from being saved:
+      </h2>
+      <ul>
+        <% @bug.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </p>
+
+  <p>
+    <%= form.label :issue_type %>
+    <%= form.select :issue_type, ['issue', 'enhancement','feature'], :selected => 'feature' %>
+  </p>
+
+  <p>
+    <%= form.label :priority %>
+    <%= form.select :priority, ['low','medium','high'], :selected => 'medium' %>
+  </p>
+
+  <p>
+    <%= form.label :status %>
+    <%= form.select :status, ['open','closed','monitor'], :selected => 'open' %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', bugs_path %>
