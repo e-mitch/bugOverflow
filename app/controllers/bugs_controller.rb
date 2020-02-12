@@ -42,9 +42,10 @@ def destroy
  
   redirect_to bugs_path
 end
+  
  
 private
   def bug_params
-    params.require(:bug).permit(:title, :description, :issue_type, :priority, :status)
-  end
+   params.require(:bug).permit(:title, :description, :issue_type, :status, :priority, :user_id)
+end
 end

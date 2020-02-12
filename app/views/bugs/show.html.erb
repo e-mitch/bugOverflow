@@ -1,4 +1,9 @@
 <p>
+  <strong>User:</strong>
+  <%= (@bug.user.try(:lname) || "NA")%>
+ </p>
+
+<p>
   <strong>Title:</strong>
   <%= @bug.title %>
 </p>
@@ -7,7 +12,7 @@
   <strong>Description:</strong>
   <%= @bug.description %>
 </p>
-
+ 
 <p>
   <strong>Issue Type:</strong>
   <%= @bug.issue_type %>
@@ -23,5 +28,6 @@
   <%= @bug.status %>
 </p>
 
-<td><%= link_to 'Edit', edit_bug_path(@bug) %></td>
+ 
+<%= link_to 'Edit', edit_bug_path(@bug) %> |
 <%= link_to 'Back', bugs_path %>

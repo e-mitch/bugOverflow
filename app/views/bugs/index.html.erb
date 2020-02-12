@@ -1,7 +1,7 @@
 <h1>Listing Bugs</h1>
- <%= link_to 'New bug', new_bug_path %>
 <table>
   <tr>
+    <th>User</th>
     <th>Title</th>
     <th>Description</th>
     <th>Issue Type</th>
@@ -12,6 +12,7 @@
  
   <% @bugs.each do |bug| %>
     <tr>
+      <td><%= (bug.user.try(:fname) + " " +bug.user.try(:lname) || "NA") %></td>
       <td><%= bug.title %></td>
       <td><%= bug.description %></td>
       <td><%= bug.issue_type %></td>
@@ -25,3 +26,4 @@
     </tr>
   <% end %>
 </table>
+   <%= link_to 'New bug', new_bug_path %>
