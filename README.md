@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Testing specifications for bugs:
+-title must be present
+-title must be between 5 and 80 characters
+-description must be present
+-description must be between 20 and 300 characters
