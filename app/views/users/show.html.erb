@@ -1,24 +1,25 @@
 <p id="notice"><%= notice %></p>
+<table class = "table">
+  <tbody>
+    <tr>
+      <th scope="col">First Name</th>
+      <td scope="col"><%= @user.fname %></td>
+    </tr>
+    <tr>
+      <th scope="row">Last Name</th>
+      <td scope="row"><%= @user.lname %></td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td scope="row"><%= @user.email %></td>
+    </tr>
+    <tr>
+      <th scope="row">Thumbnail</th>
+      <td scope="row"><%= @user.thumbnail %></td>
+    </tr>
+  </tbody>
+  </table>
 
-<p>
-  <strong>Lname:</strong>
-  <%= @user.lname %>
-</p>
 
-<p>
-  <strong>Fname:</strong>
-  <%= @user.fname %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Thumbnail:</strong>
-  <%= @user.thumbnail %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
+&nbsp &nbsp <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

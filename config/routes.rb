@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :bugs do
     resources :users
   end
-  root 'welcome#index'
+  root 'home#index'
 end
