@@ -7,10 +7,10 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th class="w-25">First Name</th>
-      <th class="w-25">Last Name</th>
-      <th class="w-25">Email</th>
-      <th class="w-25">Thumbnail</th>
+      <th class="w-25"><button type = "button" class = "btn btn-outline-dark" id="fnameHeader">First Name</button></th>
+      <th class="w-25"><button type="button"  class = "btn btn-outline-dark" id = "lnameHeader">Last Name</button></th>
+      <th class="w-25"><button type="button" class = "btn btn-outline-dark" id = "emailHeader">Email</button></th>
+      <th class="w-25"><button type="button" class = "btn btn-outline-dark" id = "thumbnailHeader">Thumbnail</button></th>
       <th class="w-25">Actions</th>
       </tr>
     </thead>
@@ -38,3 +38,4 @@
   </table>
   <br/>
   &nbsp<%= link_to 'New User', new_user_path, :class => "btn btn-primary" %>
+<%= javascript_pack_tag 'tableSort', 'data-turbolinks-track': 'reload' %>

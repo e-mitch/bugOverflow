@@ -24,6 +24,8 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+     puts " The params: " 
+    p params
     thumb_upload = params[:user][:thumbnail] 
     params[:user][:thumbnail] = thumb_upload.original_filename
     @user = User.new(user_params)
@@ -42,7 +44,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    thumb_upload = params[:user][:thumbnail] 
+    thumb_upload = params[:thumbnail] 
     params[:user][:thumbnail] = thumb_upload.original_filename
     respond_to do |format|
       if @user.update(user_params)
