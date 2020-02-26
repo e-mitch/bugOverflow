@@ -5,7 +5,7 @@ var thumbnailReadyToSubmit = true;
 
 
 let form = document.getElementById("userForm");
-let fnameInput = document.getElementsByName('fnameInput')[0];
+let fnameInput = document.getElementsByClassName('form-control')[0];
 let fnameError = document.getElementById('fnameError');
 
 fnameInput.addEventListener("change", () => {
@@ -19,7 +19,7 @@ fnameInput.addEventListener("change", () => {
   }
 });
 
-let lnameInput = document.getElementsByName('lnameInput')[0];
+let lnameInput = document.getElementsByClassName('form-control')[1];
 let lnameError = document.getElementById('lnameError');
 
 lnameInput.addEventListener("change", () => {
@@ -33,7 +33,7 @@ lnameInput.addEventListener("change", () => {
   }  
 });
 
-let emailInput = document.getElementsByName('emailInput')[0];
+let emailInput = document.getElementsByClassName('form-control')[2];
 let emailError = document.getElementById('emailError');
 
 emailInput.addEventListener("change", () => {
@@ -47,13 +47,16 @@ emailInput.addEventListener("change", () => {
   }
 });
 
-let thumbnailInput = document.getElementsByName('thumbnailInput')[0];
+let thumbnailInput = document.getElementsByClassName('form-control-file')[0];
 let thumbnailError = document.getElementById('thumbnailError');
 
 thumbnailInput.addEventListener("change", () => {
   thumbnailValue = thumbnailInput.value;
   console.log("thumbnail value: " + thumbnailValue);
-  if (thumbnailValue.endsWith('.gif') == false && thumbnailValue.endsWith('.jpg') == false && thumbnailValue.endsWith('.png') == false){
+  if(thumbnailValue.length < 3){
+    thumbnailError.innerHTML = "Please pick a thumbnail";
+    thumbnailReadyToSubmit = false;
+  }else if (thumbnailValue.endsWith('.gif') == false && thumbnailValue.endsWith('.jpg') == false && thumbnailValue.endsWith('.png') == false){
     thumbnailError.innerHTML = "Please enter a valid thumbnail";
     thumbnailReadyToSubmit = false;
   }else {
@@ -62,14 +65,21 @@ thumbnailInput.addEventListener("change", () => {
   }
 });
 
-/*
+
 form.addEventListener('submit',(event) =>{
   console.log("fname : " + fnameValue + " lname: " + lnameValue + " email: " + emailValue);
   if (fnameReadyToSubmit == false || lnameReadyToSubmit == false || emailReadyToSubmit == false || thumbnailReadyToSubmit == false){
     event.preventDefault();
   }
 });
-*/
+
+form.addEventListener('update',(event) =>{
+  console.log("fname : " + fnameValue + " lname: " + lnameValue + " email: " + emailValue);
+  if (fnameReadyToSubmit == false || lnameReadyToSubmit == false || emailReadyToSubmit == false || thumbnailReadyToSubmit == false){
+    event.preventDefault();
+  }
+});
+
 
 
 
