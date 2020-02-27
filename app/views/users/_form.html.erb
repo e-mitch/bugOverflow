@@ -13,26 +13,26 @@
   <div class="form-group">
     <%= form.label :fname , "First Name"%>
     <%= form.text_field :fname, id: :user_fname, class: "form-control"%>
-    <div id="fnameError"></div>
+    <div id="fnameError" class = "errorMsg"></div>
   </div>
     
   <div class="form-group">
     <%= form.label :lname, "Last Name" %>
     <%= form.text_field :lname, id: :user_lname, class: "form-control"%>
-    <div id="lnameError"></div>
+    <div id="lnameError" class = "errorMsg"></div>
   </div>
     
   <div class="form-group">
     <%= form.label :email, "Email" %>
     <%= form.text_field :email, id: :user_email, class: "form-control"%>
-    <div id="emailError">
+    <div id="emailError" class = "errorMsg">
     </div>
   </div>
     
   <div class="form-group">
     <%= form.label :thumbnail, "Profile Image" %>
     <%= form.file_field :thumbnail, id: :user_thumbnail, class: "form-control-file"%>
-    <div id="thumbnailError">
+    <div id="thumbnailError" class = "errorMsg">
      </div>
   </div>
     

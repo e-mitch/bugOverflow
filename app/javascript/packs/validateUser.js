@@ -53,8 +53,8 @@ let thumbnailError = document.getElementById('thumbnailError');
 thumbnailInput.addEventListener("change", () => {
   thumbnailValue = thumbnailInput.value;
   console.log("thumbnail value: " + thumbnailValue);
-  if(thumbnailValue.length < 3){
-    thumbnailError.innerHTML = "Please pick a thumbnail";
+  if(thumbnailValue.length == 0){
+    thumbnailError.innerHTML = "Please pick a thumbnail"; 
     thumbnailReadyToSubmit = false;
   }else if (thumbnailValue.endsWith('.gif') == false && thumbnailValue.endsWith('.jpg') == false && thumbnailValue.endsWith('.png') == false){
     thumbnailError.innerHTML = "Please enter a valid thumbnail";
@@ -66,15 +66,14 @@ thumbnailInput.addEventListener("change", () => {
 });
 
 
+
 form.addEventListener('submit',(event) =>{
-  console.log("fname : " + fnameValue + " lname: " + lnameValue + " email: " + emailValue);
   if (fnameReadyToSubmit == false || lnameReadyToSubmit == false || emailReadyToSubmit == false || thumbnailReadyToSubmit == false){
     event.preventDefault();
   }
 });
 
 form.addEventListener('update',(event) =>{
-  console.log("fname : " + fnameValue + " lname: " + lnameValue + " email: " + emailValue);
   if (fnameReadyToSubmit == false || lnameReadyToSubmit == false || emailReadyToSubmit == false || thumbnailReadyToSubmit == false){
     event.preventDefault();
   }
